@@ -1,0 +1,83 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+
+
+
+
+
+.card-container {
+  display: flex; /* Flexbox layout */
+  flex-wrap: wrap; /* Allows cards to wrap to a new row if necessary */
+  gap: 1.5rem; /* Spacing between cards */
+  justify-content: center; /* Center align the cards */
+  padding: 1rem; /* Optional padding around the container */
+}
+
+.card {
+  background-color: #1a1a1a; /* Card background color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 1rem; /* Inner padding */
+  width: calc(25% - 2rem); /* Adjust width to fit 4 cards per row */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  text-align: center; /* Center text content */
+  transition: transform 0.3s, box-shadow 0.3s; /* Add hover effects */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift card slightly on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Emphasize shadow */
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 2rem); /* Two cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%; /* Single card per row on very small screens */
+  }
+}
