@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const API_KEY = "your_tmdb_api_key"; // Replace with your TMDb API key
+const API_KEY = "6c3d8a34cebc413157a4082449463e55";
 const API_URL = "https://api.themoviedb.org/3/movie";
 
 function MovieDetails() {
@@ -27,6 +27,7 @@ function MovieDetails() {
         };
 
         fetchMovieDetails();
+        console.log("Movie ID:", movieId); // Check what value is passed
     }, [movieId]);
 
     if (loading) {

@@ -41,12 +41,6 @@
   color: #888;
 }
 
-
-
-
-
-
-
 .card-container {
   display: flex; /* Flexbox layout */
   flex-wrap: wrap; /* Allows cards to wrap to a new row if necessary */

@@ -1,37 +1,18 @@
-/*
 import React from "react";
-
-function MovieCard({ movie, onAddToFavorites }) {
-    return (
-        <div className="bg-white rounded-lg shadow-md p-4 text-center transform transition duration-300 hover:shadow-lg hover:scale-105">
-            <img
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                alt={movie.title}
-                className="w-full h-72 object-cover rounded-lg lazyload"
-                loading="lazy"
-            />
-            <h3 className="font-bold mt-4 text-lg">{movie.title}</h3>
-            <p className="text-gray-500">{movie.release_date}</p>
-            <button
-                onClick={() => onAddToFavorites(movie)}
-                className="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 hover:bg-blue-600"
-            >
-                Add to Favorites
-            </button>
-        </div>
-    );
-}
-
-export default MovieCard;
-*/
-import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function MovieCard({ movie, onCardClick, onAddToFavorites }) {
+    const navigate = useNavigate();
+   const handleCardClick = (movieId) => {
+    navigate(`/movies/${movieId}`);
+};
     return (
         <div
             className="movie-card"
-            onClick={() => onCardClick && onCardClick(movie.id)}
-            style={{ cursor: onCardClick ? "pointer" : "default" }}
+            onClick={handleCardClick}
+            style={{ cursor: "pointer" }}
+            //onClick={() => onCardClick && onCardClick(movie.id)}
+            //style={{ cursor: onCardClick ? "pointer" : "default" }}
         >
             <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
