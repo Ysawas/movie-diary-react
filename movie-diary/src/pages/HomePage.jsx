@@ -4,11 +4,12 @@ import Navbar from "../components/Navbar";
 import SearchBar from "../components/SearchBar";
 import MovieList from "../components/MovieList";
 import MovieDetails from "./MovieDetails";
-import { API_URL, API_KEY, SEARCH_URL } from "../utils/api";
+
 
 const HomePage = () => {
     const movie = { title: "Inception", description: "A mind-bending thriller", image: "/path/to/image.jpg" };
-
+    const API_URL = import.meta.env.VITE_API_URL
+    const API_KEY = import.meta.env.VITE_API_KEY
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
