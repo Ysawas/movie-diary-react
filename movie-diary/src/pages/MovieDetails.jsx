@@ -71,10 +71,11 @@ export default MovieDetails;
 
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { API_KEY, API_URL } from "../utils/api";
 
 function MovieDetails() {
-    const { movieId } = useParams();
+    const { movieID } = useParams();
+    const API_URL = import.meta.env.VITE_API_URL
+    const API_KEY = import.meta.env.VITE_API_KEY
     const [movie, setMovie] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -82,7 +83,7 @@ function MovieDetails() {
     useEffect(() => {
         const fetchMovieDetails = async () => {
             try {
-                const response = await fetch(`${API_URL}/${movieId}?api_key=${API_KEY}`);
+                const response = await fetch(`${API_URL}/movie/${movieID}?api_key=${API_KEY}`);
                 if (!response.ok) {
                     throw new Error(`Failed to fetch movie details: ${response.statusText}`);
                 }
@@ -96,7 +97,7 @@ function MovieDetails() {
         };
 
         fetchMovieDetails();
-    }, [movieId]);
+    }, [movieID]);
 
     if (loading) return <div className="loading">Loading...</div>;
     if (error) return <div className="error">Error: {error}</div>;

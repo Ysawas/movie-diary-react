@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import SearchBar from "../components/SearchBar";
 import MovieList from "../components/MovieList";
-import MovieDetails from "../components/MovieDetails";
-import { API_URL, SEARCH_URL } from "../utils/api";
+import MovieDetails from "./MovieDetails";
+import { API_URL, API_KEY, SEARCH_URL } from "../utils/api";
 
 const HomePage = () => {
     const movie = { title: "Inception", description: "A mind-bending thriller", image: "/path/to/image.jpg" };
-  
+
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
@@ -16,7 +16,7 @@ const HomePage = () => {
     }, []);
     const fetchPopularMovies = async () => {
         try {
-            const response = await fetch(API_URL);
+            const response = await fetch(`${API_URL}/movie/popular?api_key=${API_KEY}&language=en-US&page=1`);
             const data = await response.json();
             setMovies(data.results);
         } catch (error) {
