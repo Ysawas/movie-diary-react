@@ -5,7 +5,6 @@ import SearchBar from "../components/SearchBar";
 import MovieList from "../components/MovieList";
 import MovieDetails from "./MovieDetails";
 
-
 const HomePage = () => {
     const movie = { title: "Inception", description: "A mind-bending thriller", image: "/path/to/image.jpg" };
     const API_URL = import.meta.env.VITE_API_URL
