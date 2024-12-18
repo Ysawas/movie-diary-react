@@ -7,9 +7,9 @@ import MovieDetails from "./MovieDetails";
 
 const HomePage = () => {
     const movie = { title: "Inception", description: "A mind-bending thriller", image: "/path/to/image.jpg" };
-    const API_URL = import.meta.env.VITE_API_URL
-    const API_KEY = import.meta.env.VITE_API_KEY
-    const SEARCH_URL = import.meta.env.VITE_SEARCH_URL
+    const API_URL = import.meta.env.VITE_API_URL;
+    const API_KEY = import.meta.env.VITE_API_KEY;
+    const SEARCH_URL = import.meta.env.VITE_SEARCH_URL;
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
